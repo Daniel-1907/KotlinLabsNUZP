@@ -1,13 +1,22 @@
-var globalOutBuffer : StringBuilder? = null
+fun seed(): String = "Daniel-1907"   
 
-fun interceptPrintln(sb: StringBuilder) {
-    globalOutBuffer = sb
-}
+fun labNumber(): Int = 1
 
-fun println(str: String) {
-    if (globalOutBuffer != null) {
-        globalOutBuffer?.append(str)?.append('\n')
-    } else {
-        System.out.println(str)
-    }
+fun main(args: Array<String>) {
+    println("Лабораторна робота №${labNumber()}")
+    println("користувач ${seed()}")
+
+    var kitty = "Васько"
+    kitty += " \uD83D\uDC31"
+    val age = 7
+    println("Кошеня №1 - $kitty віком $age років")
+
+    val catName: String = "Мурзик \uD83D\uDC08"
+    val weight: Float = 3.5f
+    println("Кошеня №2 - $catName з вагою $weight кг")
+
+    val catName3: String = "Рудий \uD83D\uDC06"
+    val age3 = 6
+    val weight3 = 8.2
+    println("Кошеня №3 - $catName3, віком $age3 років, з вагою $weight3 кг")
 }
